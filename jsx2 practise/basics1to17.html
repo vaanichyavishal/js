@@ -1,0 +1,110 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="v1"></div>
+        <div id="v2"></div>
+        <div id="v3"></div>
+        <div id="v4"></div>
+        <div id="v5"></div>
+        <div id="v6"></div>
+        <div id="v7"></div>
+        <div id="v8"></div>
+        <div id="v9"></div>
+        <div id="v10"></div>
+        <div id="v11"></div>
+        <div id="v12"></div>
+        <div id="v13"></div>
+        <div id="v14"></div>
+        <div id="v15"></div>
+        <div id="v16"></div>
+        <div id="v17"></div>
+    
+        
+        <script type="text/babel">
+            //1.Render JSX element in HTML
+            var x = <h1>Rendering of jsx element in HTML</h1>
+            ReactDOM.render(x,document.getElementById("v1"))
+
+            //2.Evaluate expression in JSX element in HTML
+            var expression = <h1>{10+20}</h1>
+            ReactDOM.render(expression,document.getElementById("v2"))
+
+            //3.Evaluate string concatenation in JSX element in HTML
+            var y = <h1>{"vaanichya"+"vishal"}</h1>
+            ReactDOM.render(y,document.getElementById("v3"))
+
+            //4.Evaluate logical expression in JSX element in HTML
+            var y = <h1>{"vaanichya"+"vishal"}</h1>
+            ReactDOM.render(y,document.getElementById("v4"))
+
+            //5.Print array of numbers in JSX element in HTML
+            var ar = <h1>{['1','2','3','4']}</h1>
+            ReactDOM.render(ar,document.getElementById("v5"))
+
+            //6.Print array of strings in JSX element in HTML
+            var z = <h1>{['vaanichya','vishal','akhil']}</h1>
+            ReactDOM.render(z,document.getElementById("v6"))
+
+            //7.Print square root of 14 in JSX element in HTML
+            var squareroot = <h1>{Math.sqrt(14)}</h1>
+            ReactDOM.render(squareroot,document.getElementById("v7"))
+
+            //8.Print integer part of the number 134.42 in JSX element in HTML
+            var int = <h1>{parseInt(134.4494882822)}</h1>
+            ReactDOM.render(int,document.getElementById("v8"))
+
+            //9.Print String praveen in uppercase in JSX element in HTML
+                var uc = <h1>{"vishal".toUpperCase()}</h1>
+            ReactDOM.render(uc,document.getElementById("v9"))
+
+            //10.Print String length of praveen in JSX element in HTML
+            var ln = <h1>{"vishal".length}</h1>
+            ReactDOM.render(ln,document.getElementById("v10"))
+
+            //11.Print reverse of string praveen in JSX
+            var reverse = <h1>{"vishal".split("").reverse().join("")}</h1>
+            ReactDOM.render(reverse,document.getElementById("v11"))
+
+            //12.Evaluate addition of two variable values in JSX
+            var add1 = +prompt();
+            var add2 = +prompt();
+            var add12 = <h1>{add1+add2}</h1>
+            ReactDOM.render(add12,document.getElementById("v12"))
+
+            //13.Display greatest of two variable values in JSX
+            var gt1 = +prompt();
+            var gt2 = +prompt();
+            var gt = <h1>{gt1>gt2?gt1:gt2}</h1>
+            ReactDOM.render(gt,document.getElementById("v13"))
+
+            //14.Display variable value is even or odd in JSX
+            var v = +prompt();
+            var vv = <h1>{value%2===0?'even':'odd'}</h1>
+            ReactDOM.render(vv,document.getElementById("v14"))
+
+            //15.Display variable value is positive or negative in JSX
+            var pn = +prompt();
+            var value = <h1>{pn>=0?"positive":"negative"}</h1>
+            ReactDOM.render(value,document.getElementById("v15"))
+
+            //16.Display greatest variable value of three in JSX
+            var p = +prompt();
+            var q = +prompt();
+            var r = +prompt();
+            var pqr = <h1>{p>r?(p>q?p:q):(q>r?q:r)}</h1>
+            ReactDOM.render(pqr,document.getElementById("v16"))
+
+            //17.Display different elements conditionally JSX
+            var ab = +prompt()
+            var ab1 =   <div>
+                            {ab%2===0?(<h1>Even</h1>):(<i>odd</i>)}
+                        </div>
+            ReactDOM.render(ab1,document.getElementById("v17"))
+
+        </script>
+    </body>
+</html>

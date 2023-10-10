@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <button onclick="abc()">products</button>
+        <table border="1px solid">
+            <thead>
+                <th>category</th>
+                <th>description</th>
+                <th>price</th>
+                <th>image</th>
+                <th>rating</th>
+            </thead>
+            <tbody id="d1"></tbody>
+        </table>
+        <script>
+            function abc(){
+                axios.get("https://fakestoreapi.com/products").then(function(response){
+                    console.log(response)
+                    var ar=response.data
+                    ar.forEach(function(product){
+                    
+                        var tr1=document.createElement("tr")
+                        var td1=document.createElement("td")
+                        td1.innerHTML=product.category;
+                        tr1.appendChild(td1)
+
+                        var td2=document.createElement("td")
+                        td2.innerHTML=product.description;
+                        tr1.appendChild(td2)
+
+                        var td3=document.createElement("td")
+                        td3.innerHTML=product.price;
+                        tr1.appendChild(td3)
+
+                        var td4=document.createElement("td")
+                        var im=document.createElement("img")
+                        im.src=product.image
+                        im.style.width="100px"
+                        im.style.height="50px"
+                        td4.appendChild(im)
+                        tr1.appendChild(td4)
+
+                        var td5=document.createElement("td")
+                        td5.innerHTML=product.rating.rate;
+                        tr1.appendChild(td5)
+                        document.getElementById("d1").appendChild(tr1)
+                    })
+                })
+            }
+        </script>
+    </body>
+</html>

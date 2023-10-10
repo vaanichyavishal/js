@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <input type="text" placeholder="search" id="ip">
+        <button onclick="abc()">click here</button>
+        <ul id="ul"></ul>
+        <script>
+            function abc(){
+                axios.get("https://api.dictionaryapi.dev/api/v2/entries/en/")
+                .then(function(response){
+                    var ar = response.data
+                    console.log(ar)
+                })
+            }
+           
+            document.getElementById("ul")
+        </script>
+    </body>
+</html>

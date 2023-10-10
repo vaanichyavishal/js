@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <button onclick="abc()">show data</button>
+        <input type="text" id="search" onkeyup="searchfun()" placeholder="search"><br><br>
+        <table border="1px solid">
+            <thead>
+                <th>Country</th>
+                <th>Population</th>
+                <th>Capital</th>
+                <th>Flag</th>
+            </thead>
+            <tbody id="cc"></tbody>
+        </table>
+        <script>
+            
+    
+            function abc(){
+                $.get("https://restcountries.com/v3.1/all",function(Countries,status){
+                    Countries.forEach(function(country){
+                        var tr1=document.createElement("tr")
+                        var td1=document.createElement("td")
+                        td1.innerHTML=country.name.common
+                        tr1.appendChild(td1)
+                        var td2=document.createElement("td")
+                        td2.innerHTML=country.population
+                        tr1.appendChild(td2)
+                        var  td3=document.createElement("td")
+                        td3.innerHTML=country.capital
+                        tr1.appendChild(td3)
+                        var td4=document.createElement("td")
+                        var x=document.createElement("img")
+                        x.src=country.flags.svg
+                        x.style.width="100px"
+                        x.style.height="50px"
+                        td4.appendChild(x)
+                        tr1.appendChild(td4)
+                        document.getElementById("cc").appendChild(tr1)
+                    })
+                })
+            }
+
+            function searchfun(){
+                let filter = document.getElementById("search").value.toUpperCase();
+            }
+        </script>
+    </body>
+</html>

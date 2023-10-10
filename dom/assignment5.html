@@ -1,0 +1,145 @@
+<html>
+    <head></head>
+    <body>
+        <table id="dd" border="3px" >
+            <thead>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Salary</th>
+                <th>City</th>
+            </thead>
+        </table>
+        <script>
+            //5.Take an array of objects and create a table form it.
+            var objects=[
+            {   
+                "Name":"praveen",
+                "Age":"36",
+                "Gender":"male",
+                "Salary":"10000",
+                "City":"hyderabad",
+            },
+            {
+                "Name":"srikanth",
+                "Age":"32",
+                "Gender":"male",
+                "Salary":"20000",
+                "City":"bengaluru",
+            },
+            {
+                "Name":"pradeep",
+                "Age":"21",
+                "Gender":"male",
+                "Salary":"25000",
+                "City":"hyderabad",
+            },
+            {
+                "Name":"mounika",
+                "Age":"20",
+                "Gender":"female",
+                "Salary":"35000",
+                "City":"nalgonda",
+            },
+            {
+                "Name":"nikhil",
+                "Age":"22",
+                "Gender":"male",
+                "Salary":"2000",
+                "City":"guntur",
+            },
+            {
+                "Name":"riya",
+                "Age":"14",
+                "Gender":"female",
+                "Salary":"40000",
+                "City":"indore",
+            },
+            ]
+            objects.forEach(function(s,i){
+            var trow=document.createElement("tr");
+            var Name=document.createElement("td");
+            Name.innerHTML=s.Name;
+            trow.appendChild(Name);
+            var Age=document.createElement("td");
+            trow.appendChild(Age);
+            Age.innerHTML=s.Age;
+            var Gender=document.createElement("td");
+            trow.appendChild(Gender)
+            Gender.innerHTML=s.Gender;
+            var Salary=document.createElement("td");
+            trow.appendChild(Salary);
+            Salary.innerHTML=s.Salary;
+            var City=document.createElement("td");
+            trow.appendChild(City)
+            City.innerHTML=s.City
+            var table=document.getElementById("dd")
+            table.appendChild(trow)
+            })  
+        </script> 
+           <table id="ss"border="2px" align=center>
+            <thead>
+                <tr style="color: blue;">
+                    <th>name</th>
+                    <th>gender</th>
+                    <th>place</th>
+                </tr>
+            </thead>
+           </table>
+        <script>
+            //6.Generate List Elements using document object for the given Array of Objects
+            var students = [
+                    {
+                    name:'jaya',
+                    gender:'female',
+                    place:'gachibowli',
+                    },
+                    {
+                    name:'dasu',
+                    gender:'male',
+                    place:'kphb'
+                    },
+                    {
+                    name:'swati',
+                    gender:'female',
+                    place:'pune'
+                    },
+                    {
+                    name:'pallavi',
+                    gender:'female',
+                    place:'assam'
+                    },
+                    {
+                    name:'kiran',
+                    gender:'male',
+                    place:'kondapur'
+                    },
+                    {
+                    name:'thirumala',
+                    gender:'male',
+                    place:'madhapur'
+                    },
+                    {
+                    name:'priya',
+                    gender:'female',
+                    place:'hitech'
+                    },
+               ]
+                    students.forEach(function(s,i){
+                    var trow=document.createElement("tr");
+                    var n=document.createElement("td");
+                    trow.appendChild(n);
+                    n.innerHTML=s.name;
+                    var g=document.createElement("td");
+                    trow.appendChild(g);
+                    g.innerHTML=s.gender;
+                    var p=document.createElement("td");
+                    trow.appendChild(p)
+                    p.innerHTML=s.place;
+                    var table=document.getElementById("ss")
+                    table.appendChild(trow);
+
+                })
+        </script>
+    </body>
+</html>

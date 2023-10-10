@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="v1"></div>
+        <div id="v2"></div>
+        <div id="v3"></div>
+        <div id="v4"></div>
+        <div id="v5"></div>
+        <div id="v6"></div>
+    </body>
+    <script type="text/babel">
+        //1.Apply red color to JSX h1 Elemen
+        var c = <h1 style={{color:'red'}}>hello vishal</h1>
+        ReactDOM.render(c,document.getElementById("v1"))
+
+        //2.Apply red color to JSX h1 with green background
+        var b = <h1 style={{color:'red',backgroundColor:'green'}}>vaanichya.vishal</h1>
+        ReactDOM.render(b,document.getElementById("v2"))
+
+        //3.Display each array element in flex boxes
+        var ar = [21,6,2,4,7]
+        var ar1 =   <div style={{display:'flex'}}>
+                        {
+                            ar.map((a)=>{
+                                return <div style={{border:'1px solid',margin:'10px',padding:'10px'}}>{a}</div>
+                            })
+                        }
+                    </div>
+        ReactDOM.render(ar1,document.getElementById("v3"))
+
+        //4.Display each string of array in flex boxes
+        var bx = ['vishal','rahul','shanmukh','sai']
+        var box =   <div style={{display:'flex'}}>
+                        {
+                            bx.map((a)=>{
+                                return <div style={{border:'1px solid',margin:'10px',padding:'10px'}}>{a}</div>
+                            })
+                        }
+                    </div>
+        ReactDOM.render(box,document.getElementById("v4"))
+    </script>
+</html>

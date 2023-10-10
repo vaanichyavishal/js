@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        <style>
+            #dd{
+                display: flex;
+                flex-wrap: wrap;
+            }
+            #dd li{
+                list-style:none;
+                width: 250px;
+                height: 300px;
+                padding: 20px;
+                border: 2px solid;
+                font-style:italic;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-weight: bold;
+                text-rendering: geometricPrecision;
+                text-transform: uppercase;
+                text-shadow: 10px;
+                text-align-last: left;
+                border-style: solid;
+                background-color: aquamarine;
+
+            }
+        </style>
+    </head>
+    <body>
+        <button onclick="pokemon()">onclick</button>
+        <ul id="ul"></ul>
+        <script>
+            function pokemon(){
+                var url = "https://pokeapi.co/api/v2/pokemon"
+                var nm = Math.floor(Math.random()*500);
+                var imgUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/…er/sprites/pokemon/other/official-artwork.png"
+                axios.get(`${url}/${nm}`).then(function(response){
+                    var j=response.data
+                    console.log(j)
+                    var newli = document.createElement("li")
+                    var wt = document.createElement("div")
+                    var ht = document.createElement("div")
+                    var mv=document.createElement("div")
+                    var or = document.createElement("div")
+                    var im = document.createElement("img")
+
+                    newli.innerHTML="Name:"+j.name;
+                    wt.innerHTML="weight:"+j.weight;
+                    ht.innerHTML="Height:"+j.height;
+                    mv.innerHTML="movename:"+j.moves[0].move.name;
+                    or.innerHTML="order:"+j.order;
+                    im.scr=j.sprites.other["official-artwork"].front_default;
+
+                    newli.appendChild(wt);
+                    newli.appendChild(ht);
+                    newli.appendChild(mv)
+                    newli.appendChild(or);
+                    newli.appendChild(im);
+
+                    var a=  document.getElementById("ul")
+                    a.appendChild(newli)
+                })
+            }
+        </script>
+    </body>
+</html>

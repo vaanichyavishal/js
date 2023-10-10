@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="d1"></div>
+        <script type="text/babel">
+            function Todolist(){
+                var [todos,setTodos]=React.useState([
+                    "Rocky bhai",  
+                    "prabhas",
+                    "charan"
+                ])
+                function addtodo(){
+                    var x= document.getElementById("d2").value
+                    setTodos([...todos,x])
+                }
+                function deleteTodo(i){
+                    var temp = [...todos]
+                    temp.splice(i,1)
+                    setTodosa([...temp])
+                }
+                
+                return(
+                    <div>
+                        <h1>Todolist</h1>  
+                        <input type="text" placeholder="search" id="d2"/>&nbsp;
+                        <button onClick={()=>{addtodo()}}>Add Todo</button>
+                        <ul>
+                            {
+                                todos.map((todo,i)=>{
+                                    return  <li>
+                                                {todo}
+                                                <button onClick={()=>{deleteTodo(i)}}>Delete</button>
+                                            </li>
+                                })
+                            }
+                        </ul>
+                    </div>
+                )
+            }
+            ReactDOM.render(<Todolist/>,document.getElementById("d1"))
+
+        </script>
+    </body>
+</html>

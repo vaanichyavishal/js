@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+        <style>
+            #d1{
+                display: flex;
+                flex-wrap: wrap;
+                
+            }
+            #d1 li{
+                height: fit-content;
+                width: 700px;
+                padding: 20px;
+                border: 2px solid;
+                margin: 10px;
+                text-align: start;
+                background-color: rgb(180, 218, 231);
+                text-emphasis-color: white;
+            }
+            #dd{
+                margin-left: 700px;
+                background-color: rgb(180, 218, 231);;
+            }
+            
+
+            
+        </style>
+    </head>
+    <body>
+        <button onclick="getdata()" id="dd">products</button>
+        <ul id="d1">
+
+        </ul>
+        <script>
+            function getdata(){
+                axios.get("https://fakestoreapi.com/products")
+                .then(function(response){
+                    var ar=response.data
+                    console.log(response)
+                    ar.forEach(function(product){
+                        var newli = document.createElement("li")
+                        
+                        var category= document.createElement("h2")
+                        category.innerHTML = product.category;
+                        newli.appendChild(category)
+
+                        var pn = document.createElement("h3")
+                        pn.innerHTML=product.title;
+                        newli.appendChild(pn);
+
+                        var d = document.createElement("h5")
+                        d.innerHTML = "Description:"+product.description;
+                        newli.appendChild(d)
+
+                        var pi = document.createElement("img")
+                        pi.src=product.image;
+                        pi.style.width="150px"
+                        pi.style.height="150px"
+                        newli.appendChild(pi);
+
+                        var price = document.createElement("h3")
+                        price.innerHTML="Price $:"+product.price;
+                        newli.appendChild(price)
+
+                        var pr = document.createElement("h4")
+                        pr.innerHTML= "Rating:"+product.rating.rate;
+                        newli.appendChild(pr)
+
+                       
+                        document.getElementById("d1").appendChild(newli)
+                    
+                    })
+                })
+            }
+        </script>
+    </body>
+</html>
+
+    

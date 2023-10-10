@@ -1,0 +1,31 @@
+<html>
+    <head></head>
+    <body>
+        <div id="dd" style="height: fit-content;width: fit-content;">
+        <img id="sv" src="https://media.geeksforgeeks.org/wp-content/uploads/ONbulb.jpg" style="height: 100px;" alt="">
+        <img id="vs" src="https://i.postimg.cc/KjK1wL3c/bulb-off.png" style="height: 100px;" alt="">
+        </div>
+        <button onclick="abc()" id="sd" style="text-align: center;"></button>
+        <script>
+            var x=document.getElementById("dd")
+            var y=document.getElementById("sv")
+            y.style.display="none"
+            var z=document.getElementById("vs")
+            var ab=document.getElementById("sd")
+            ab.innerHTML="ON"
+            function abc(){
+                if(y.style.display=="none"){
+                    y.style.display="block"
+                    z.style.display="none"
+                    ab.innerHTML="off"
+                }
+                else{
+                    (y.style.display=="block")
+                    y.style.display="none"
+                    z.style.display="block"
+                    ab.innerHTML="on"
+                }
+            }
+        </script>
+    </body>
+</html>

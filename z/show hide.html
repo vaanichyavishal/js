@@ -1,0 +1,19 @@
+<html>
+    <head></head>
+    <body>
+        <input type="Password" id="pwd">
+        <input type="Checkbox" id="chk">show password
+        
+
+        <script>
+            var password = document.getElementById("pwd");
+
+            var check = document.getElementById("chk");
+
+            chk.onchange = function(e){
+                pwd.type  = chk.checked? "text" : "password";
+               
+            };
+        </script>
+    </body>
+</html>

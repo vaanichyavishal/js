@@ -1,0 +1,41 @@
+<html>
+    <head></head>
+    <body>
+        <h1>Hello DOM World</h1>
+        <h1 id="vi">Hello DOM World</h1> 
+        <ul id="ss">
+
+        </ul>
+        <ul id="nm">
+
+        </ul>
+        <script>
+            //1.Create one h1 element and put some text into it.output:Hello DOM World
+            var x=document.getElementsByTagName("h1");
+            console.log(x[0].innerHTML);          
+        
+            //2.. Create one h1 element,put some text into it and apply red font color to it.
+            var x=document.getElementById("vi");
+            x.style.color='red';
+            console.log(x);
+            //3.Take an array of names and create a list from it.
+            var a=['vishal','rahul','ajay','rajesh','kiran'];
+            a.forEach(function(x){
+                var k=document.createElement("li");
+                k.innerHTML=x;
+                var y=document.getElementById("ss");
+                y.appendChild(k);
+            })
+            //4.Take an array of numbers and create a list from it.
+            var num=["11",'12','13','14','15','16',"17"];
+            num.forEach(function(a){
+                var b=document.createElement("li");
+                b.innerHTML=a;
+                var c=document.getElementById("nm");
+                c.appendChild(b);
+            })
+            
+
+        </script>    
+    </body>
+</html>

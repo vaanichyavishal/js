@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="d1"></div>
+        <div id="d2"></div>
+        <div id="d3"></div>
+        <div id="d4"></div>
+        <div id="d5"></div>
+        <div id="d6"></div>
+        <div id="d7"></div>
+        <div id="d8"></div>
+        <div id="d9"></div>
+        <div id="d10"></div>
+        <div id="d11"></div>
+        <div id="d12"></div>
+        <div id="d13"></div>
+        <div id="d14"></div>
+        <script type="text/babel">
+            //1.Render JSX element in HTML
+            var x= <h1>welcome to jsx</h1>
+            ReactDOM.render(x,document.getElementById("d1"))
+
+            //2.Evaluate expression in JSX element in HTML
+            var y =<h1>{'10'+'20'}</h1> 
+            ReactDOM.render(y,document.getElementById("d2"))
+        
+            //3.Evaluate string concatenation in JSX element in HTML
+            var z= <h1>{"vishal"+"vaanichya"}</h1>
+            ReactDOM.render(z,document.getElementById("d3"))
+
+            //5.Print array of numbers in JSX element in HTML
+            var ar=<h1>{['21','6','27']}</h1>
+            ReactDOM.render(ar,document.getElementById("d4"))
+
+            //6.Print array of strings in JSX element in HTML
+            var br=<h1>{['vishal','vaanichya','rahul']}</h1>
+            ReactDOM.render(br,document.getElementById("d5"))
+
+            //7.Print square root of 14 in JSX element in HTML
+            var cr = <h1>{Math.sqrt(61)}</h1>
+            ReactDOM.render(cr,document.getElementById("d6"))
+
+            //8.Print integer part of the number 134.42 in JSX element in HTML
+            var a=<h1>{parseInt(233.42)}</h1>
+            ReactDOM.render(a,document.getElementById("d7"))
+
+            //9.Print String praveen in uppercase in JSX element in HTML
+            var b=<h1>{"vishal".toUpperCase()}</h1>
+            ReactDOM.render(b,document.getElementById("d8"))
+
+            //10.Print String length of praveen in JSX element in HTML
+            var c = <h1>{"vishal".length}</h1>
+            ReactDOM.render(c,document.getElementById("d9"))
+
+            //11.Print reverse of string praveen in JSX
+            var d = <h1>{"vishal".split("").reverse("").join("")}</h1>
+            ReactDOM.render(d,document.getElementById("d10"))
+
+            //12.Evaluate addition of two variable values in JSX
+            var e=21;
+            var f=6;
+            var ef =<h1>{e+f}</h1>
+            ReactDOM.render(ef,document.getElementById("d11"))
+
+            //13.Display greatest of two variable values in JSX
+            var ab=250;
+            var cd=150;
+            var ac=<h1>{ab>cd?ab:cd}</h1>
+            ReactDOM.render(ac,document.getElementById("d12"))
+
+            //14.Display variable value is even or odd in JSX
+            var o = +prompt();
+            var bc=<h1>{o%2===0?'even':'odd'}</h1>
+            ReactDOM.render(bc,document.getElementById("d12"))
+
+            //15.Display variable value is positive or negative in JSX
+            var op = +prompt();
+            var xy= <h1>{op>=0?'positive':'negative'}</h1>
+            ReactDOM.render(xy,document.getElementById("d13"))
+
+            //16.Display greatest variable value of three in JSX
+            var p = +prompt();
+            var q = +prompt();
+            var r = +prompt();
+            var pqr = <h1>{p>q?(p>r?p:r):(q>r?q:r)}</h1>
+            ReactDOM.render(pqr,document.getElementById("d14"))
+
+        </script>
+    </body>
+</html>

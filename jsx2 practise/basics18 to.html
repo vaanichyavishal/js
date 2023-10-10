@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="v18"></div>
+        <div id="v19"></div>
+        <div id="v20"></div>
+        <div id="v21"></div>
+        <div id="v22"></div>
+        <div id="v23"></div>
+        <div id="v24"></div>
+        <div id="v25"></div>
+        <div id="v26"></div>
+        <div id="v27"></div>
+        <div id="v28"></div>
+        <div id="v29"></div>
+        <div id="v30"></div>
+        <div id="v31"></div>
+        <div id="v32"></div>
+        <script type="text/babel">
+            //18.Display different images conditionally JSX
+            var a = +prompt();
+            var img = <div>{a%2===0?(<img src="https://wallpapercave.com/wp/wp5203002.jpg"/>):(<img src="https://w0.peakpx.com/wallpaper/841/90/HD-wallpaper-kgf-chapter-2-kgf-rocking-star-yash-yash-thumbnail.jpg"/>)}</div>
+            ReactDOM.render(img,document.getElementById("v18"))
+
+            //19.Conditionally apply url to image in JSX
+            var b = +prompt()
+            var url = <img src ={a%2===0?"https://www.koimoi.com/wp-content/new-galleries/2023/06/super-star-yash-visits-temple-of-family-deity-hints-at-new-project-002.jpg":"https://w0.peakpx.com/wallpaper/674/828/HD-wallpaper-yash-boss-cinemalu-hero-kannada-kgf-kgf-chapter-2-kgf2-telugu-thumbnail.jpg"}/>
+            ReactDOM.render(url,document.getElementById("v19"))
+
+            //20.Print array values in list items in JSX
+            var ar = ['21','6','10','216']
+            var array = <div>
+                            {
+                                ar.map((a)=>{
+                                    return <li>{a}</li>
+                                })
+                            }
+                        
+                        </div>
+            ReactDOM.render(array,document.getElementById("v20"))
+
+            //21.Print squared array values in list items in JSX
+            var br = ['21','6','11','44','216']
+            var sq = <div>
+                        {
+                            br.map((a)=>{
+                                return <li>{a*a}</li>
+                            })
+                        }
+                    </div>
+            ReactDOM.render(sq,document.getElementById("v21"))
+
+            //22.Print array values in h1 elements
+            var cr = ['12','23','19','293','488','39']
+            var h1 = <h1>
+                        {
+                            cr.map((a)=>{
+                                return <li>{a}</li>
+                            })
+                        }
+                    </h1>
+            ReactDOM.render(h1,document.getElementById("v22"))
+
+            //23.Print array values in sorted order in list items in JSX
+            var d =  ['12','23','19','293','488','39']
+            var e = <div>
+                        {
+                            d.sort().map((a)=>{
+                                return <li>{a}</li>
+                            })
+                        }                
+                    </div>
+            ReactDOM.render(e,document.getElementById("v23"))
+        </script>
+    </body>
+</html>
